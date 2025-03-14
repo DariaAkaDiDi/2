@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Fryzjerski</title>
+    <style>
+        header {
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        main.container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        section {
+            width: 45%; 
+            box-sizing: border-box; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th, td {
+            width: 30%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* formularz w kolumnie */
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336; 
+        }
+
+        button[type="reset"]:hover {
+            background-color: #d32f2f; 
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Salon Fryzjerski</h1>
+    </header>
+<hr/>
+    <main class="container">
+        <section id="Formularz">
+            <h2>Umów się z nami na wizytę!</h2>
+            <form action="rezerwacja.php" method="POST">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email"><br><br>
+
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="date">Data wizyty:</label>
+                <input type="date" id="date" name="date" required><br><br>
+
+                <label for="service">Usługa:</label>
+                <select id="service" name="service">
+                    <option value="strzyzenieM">Cięcie męskie</option>
+                    <option value="strzyzenieF">Cięcie żeńskie</option>
+                    <option value="strzyzenieB">Cięcie dziecięce</option>
+                    <option value="farbowanie">Farbowanie</option>
+                    <option value="rozjasnianie">Rozjaśnianie</option>
+                </select><br><br>
+
+                <label for="message">Dodatkowe uwagi:</label><br>
+                <textarea id="message" name="message" rows="4"></textarea><br><br>
+
+                <div class="button-container">
+                    <button type="submit">Zarezerwuj wizytę</button>
+                    <button type="reset">Wyczyść</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="cennik">
+            <h2>CENNIK</h2>
+            <table>
+                <tr>
+                    <th colspan="2">Kosmetyki</th> 
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>Szampon</li>
+                            <li>Odżywka</li>
+                            <li>Olejek</li>
+                            <li>Maska do włosów</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>20 zł</li>
+                            <li>25 zł</li>
+                            <li>15 zł</li>
+                            <li>15 zł</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">Usługi</th> 
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>Cięcie męskie</li>
+                            <li>Cięcie żeńskie</li>
+                            <li>Cięcie dziecięce</li>
+                            <li>Farbowanie</li>
+                            <li>Rozjaśnianie</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>40 zł</li>
+                            <li>40 zł</li>
+                            <li>20 zł</li>
+                            <li>80 zł</li>
+                            <li>60 zł</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <hr/>
+    <footer>
+        <p>Kontakt:</p>
+        <p>
+            <li>Email: kontakt@example.com </li>
+            <li>Tel: 123 123 123</li>
+        </p>
+    </footer>
+</body>
+</html>
